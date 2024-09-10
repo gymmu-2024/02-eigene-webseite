@@ -4,105 +4,29 @@
     box-sizing: border-box;
 }
 
+/* Hier können Stiele für die ganze Webseite angegeben werden. */
 body {
     margin: 0;
-    background-color: lightgrey;
 }
 
-img.bg,
-img.fg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
+/* Hier werden 2 Elemente nebeneinander gepackt.
+   Mit `display: flex;` können wir angeben in welche Richtung alle Kinder von
+   einem Element ausgerichtet werden. Wählen wir `flex-direction: row`, dann
+   werden Sie alle mit gleich viel Platz in einer Reihe nebeneinander platziert.
+   Mit `flex-direction: column` werden Sie untereinander platziert. Das reicht
+   um die meisten Elemente gut zu platzieren.
+*/
+.text-and-img {
+    display: flex; /* Richtet die Elemnte in einer Zeile oder Reihe aus. */
+    flex-direction: row; /* In einer Reihe ausgerichtet. */
+    gap: 1rem; /* Abstand zwischen den Elementen.*/
+    align-items: center; /* Ausrichtung in der Mitte entlang der anderen Achse. */
+    justify-content: center; /* Ausrichtung in der Mitte entlang der Hauptachse */
+    margin: 1rem; /* Abstand auf allem Seiten. */
 }
 
-.img-container {
-    position: relative;
-    width: 100%;
-    padding-top: 100%;
-}
-
-img.bg {
-    z-index: 5;
-    opacity: 0.2;
-}
-
-img.fg {
-    opacity: 1;
-    z-index: 10;
-}
-
-img.bg.show-diff {
-    z-index: 15;
-    opacity: 0.5;
-    filter: invert(100%);
-}
-
-main {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.ex-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ex-container {
-    background-color: white;
-    padding: 0.5rem 0.75rem;
-}
-
-h1 {
-    background-color: white;
-    text-align: center;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-}
-
-.fade-in {
-    animation-name: slide-from-top;
-    animation-direction: normal;
-    animation-duration: 400ms;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-.fade-out {
-    animation-name: slide-to-top;
-    animation-direction: normal;
-    animation-duration: 400ms;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide-from-top {
-    from {
-        display: none;
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    to {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-to-top {
-    from {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        display: none;
-        opacity: 0;
-        transform: translateY(-100%);
-    }
+/* Diese Regel beschreibt wie Bilder in diesem Container dargestellt werden. */
+.text-and-img img {
+    border-radius: 2rem; /* Damit können die Ecken abgerundet werden. */
+    width: 100%; /* Braucht es damit das Bild im Container bleibt und nicht viel zu gross ist. */
 }
