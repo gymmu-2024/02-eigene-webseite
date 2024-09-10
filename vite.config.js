@@ -17,5 +17,5 @@ export default defineConfig({
         testIdAttribute: 'id'
     },
 
-    base: '/01-grafiken-mit-svg/'
+    base: '/02-eigene-webseite/'
 })
