@@ -1,6 +1,16 @@
-# Grafiken mit SVG erstellen
+# Webseiten Projekt
 
 In diesem Projekt stellen Sie sich selber über eine Webseite dar.
+
+## Projekt einrichten
+
+Sie können diesem Video folgen um das ganze Projekt aufzusetzen.
+
+[![Projekt
+einrichten](https://img.youtube.com/vi/e_Hr8u-CLYY/0.jpg)](https://www.youtube.com/watch?v=e_Hr8u-CLYY)
+
+## Webseite veröffentlichen
+
 Die Webseite wird dann über Github-Pages automatisch veröffentlicht, und kann
 mit Freunden und Familie geteilt werden. Damit Github-Pages auch funktioniert,
 muss es zuerst aktiviert werden. Gehen Sie dafür auf Ihr Repository und dort
@@ -15,9 +25,32 @@ auch für andere über das Internet zugänglich. Um die eigene Webseite direkt z
 sehen, gibt es eine schnellere Lösung, mehr dazu im Abschnitt
 [Entwicklungsumgebung aktivieren](#entwicklungsumgebung-aktivieren).
 
+## Config anpassen
+
 Damit auf der Webseite alles richtig dargestellt werden kann, muss die Datei
 `vite.config.js` leicht angepasst werden. Der Wert für `base` muss so angepasst
 werden, das der Name des Repositories darin steht.
+
+### Zurück zur Hauptseite
+
+Wenn Sie auf Ihre Hauptseite verlinken möchten, dann müssen Sie dafür den Wert
+von `base` angeben. Also wenn Sie von einer Unterwebseite auf Ihre Hauptseite
+möchten, dann müssen Sie dort den Wert von `base` beim Attribut `href=...` angeben.
+
+### Weitere Unterseiten hinzufügen
+
+Um weitere Unterwebseiten hinzuzufügen, müssen diese in `vite.config.js`
+zusätzlich angegeben werden. Dafür können Sie den folgenden Block mit Ihrer
+neuen Unterwebseite erweitern. Einfach den Eintrag von `hobbies` kopieren und anpassen.
+
+```js
+rollupOptions: {
+    input: {
+        main: resolve(__dirname, 'index.html'),
+        hobbies: resolve(__dirname, 'pages/hobbies.html'),
+    }
+}
+```
 
 ## Entwicklungsumgebung aktivieren
 
