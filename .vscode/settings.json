@@ -1,5 +1,8 @@
 {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "svgPreview.autoOpen": false
+    "svgPreview.autoOpen": false,
+    "files.eol": "\n",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80
 }
